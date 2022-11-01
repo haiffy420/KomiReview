@@ -1,0 +1,290 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #111;
+  color: white;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: black;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.nav__links a,
+.cta,
+.overlay__content a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+}
+
+.nav__links li {
+  padding: 0px 0px;
+}
+
+.nav__links li a {
+  float: left;
+  display: block;
+  color: darkgrey;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  transition: color 0.3s ease 0s;
+}
+
+.nav__links li a:hover {
+  color: white;
+  border-bottom: 3px solid #00c0ff;
+}
+
+.cta {
+  padding: 9px 25px;
+  background-color: #0baadf;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease 0s;
+}
+
+.cta:hover {
+  background-image: linear-gradient(to bottom right, #80ced7, #00c0ff);
+}
+
+.menu {
+  display: none;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  background-color: #24252a;
+  overflow-x: hidden;
+  transition: width 0.5s ease 0s;
+}
+
+.overlay--active {
+  width: 100%;
+}
+
+.overlay__content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay a {
+  padding: 15px;
+  font-size: 36px;
+  display: block;
+  transition: color 0.3s ease 0s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  color: #0088a9;
+}
+.overlay .close {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  color: #edf0f1;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
+  }
+  .overlay .close {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .nav__links,
+  .cta {
+    display: none;
+  }
+  .menu {
+    display: initial;
+  }
+}
+
+main {
+  padding: 20px;
+  overflow: auto;
+  margin: 0;
+}
+main .band-1 h1 {
+  flex-direction: column;
+  width: 100%;
+  margin-top: 10px;
+  padding-top: 10px;
+  display: inline-block;
+}
+
+h2,
+h3 {
+  color: white;
+  font-size: 15px;
+}
+
+.column {
+  float: left;
+  flex-direction: row;
+}
+
+.left {
+  width: 70%;
+}
+
+.right {
+  width: 30%;
+  flex-direction: row;
+}
+@media screen and (max-width: 1000px) {
+  .column {
+    width: 100%;
+  }
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.band-1 {
+  width: 100%;
+
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+  float: left;
+}
+@media screen and (max-width: 1000px) {
+  .band-1 {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+}
+
+@media (min-width: 60em) {
+  .band-1 {
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+  }
+}
+.card {
+  background: #171717;
+  text-decoration: none;
+  color: white;
+  box-shadow: 1px 1px 15px 0 rgb(0 0 0 / 6%);
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  position: relative;
+  top: 0;
+  transition: all 0.1s ease-in;
+}
+.card:hover {
+  top: -2px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+}
+.card article {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card h1 {
+  font-size: 20px;
+  margin: 0;
+  color: white;
+}
+.card p {
+  flex: 1;
+  line-height: 1.4;
+}
+.card span {
+  font-size: 12px;
+  font-weight: bold;
+  color: darkgrey;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 2em 0 0 0;
+}
+.card p {
+  color: darkgrey;
+}
+.card .thumb {
+  padding-bottom: 60%;
+  background-size: cover;
+  background-position: center center;
+}
+@media (min-width: 60em) {
+  .item-1 {
+    grid-column: 1 / span 2;
+  }
+  .item-1 h1 {
+    font-size: 24px;
+  }
+}
+
+.profile img {
+  border-radius: 50%;
+}
+
+aside {
+  float: right;
+  width: 100%;
+  padding-left: 20px;
+  padding-top: 77px;
+}
+@media screen and (max-width: 1000px) {
+  aside {
+    width: 100%;
+    padding: 0;
+    margin-top: 15px;
+  }
+}
+footer {
+  padding: 20px;
+  color: white;
+  background-color: black;
+  text-align: center;
+}
